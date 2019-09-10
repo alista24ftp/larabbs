@@ -18,4 +18,12 @@ class UserObserver
     {
         //
     }
+
+    public function saving(User $user)
+    {
+        // Only set default avatar if user avatar is empty
+        if(empty($user->avatar)){
+            $user->avatar = 'https://cdn.learnku.com/uploads/images/201710/30/1/TrJS40Ey5k.png';
+        }
+    }
 }
